@@ -1140,9 +1140,12 @@ input, select, textarea {
 			-ms-transition-delay: 0.75s;
 			transition-delay: 0.75s;
 			background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url("../../images/overlay.png");
-			background-size: auto, 256px 256px;
-			background-position: center, center;
-			background-repeat: no-repeat, repeat;
+			background-size: auto,
+ 256px 256px;
+			background-position: center,
+ center;
+			background-repeat: no-repeat,
+ repeat;
 			z-index: 2;
 		}
 
@@ -1656,3 +1659,133 @@ input, select, textarea {
 		body.is-preload #footer {
 			opacity: 0;
 		}
+
+/* Greeting */
+
+.greeting {
+    display: inline-block;
+    font-size: 1.5em;
+    font-weight: bold;
+    transition: opacity 1s ease-in-out;
+}
+	
+	@keyframes fade {
+		0% { opacity: 0; }
+		20% { opacity: 1; }
+		80% { opacity: 1; }
+		100% { opacity: 0; }
+	}
+
+/* Text Alignment */
+
+#about p, #skills p, #certifications p {
+    text-align: justify;
+}
+
+/* Project page grid layout */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Only 1 column now */
+    gap: 40px; /* Space between project items */
+    justify-content: center; /* Center content */
+    padding: 20px 0;
+}
+
+.project-item {
+    background: #f8f8f8;
+    padding: 12px; /* Reduced padding */
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    width: 70%; /* ✅ Shrunk to 70% of the original size */
+    margin: 0 auto; /* Center the cards */
+}
+
+.project-item img {
+    width: 100%; /* Ensure images fit */
+    height: auto;
+    border-radius: 5px;
+}
+
+.project-item h3 {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: black; /* ✅ Set project title text to black */
+}
+
+/* Optional: Add a hover effect */
+.project-item:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive design: Switch to 1 column on small screens */
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+    }
+}
+
+/* Download buttons */
+.download-container {
+    display: flex;
+    justify-content: center; /* Center the buttons */
+    gap: 60px; /* Adds space between them */
+    margin-top: 30px;
+}
+
+.download-btn {
+    background-color: chocolate; /* Set button color to chocolate */
+    color: white;
+    padding: 12px 20px; /* Set padding to give space inside the button */
+    font-size: 1em; /* Set a slightly larger font size for better readability */
+    font-weight: bold; /* Use bold font for emphasis */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+    display: inline-block; /* Ensure the button behaves like a block element for better styling */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+}
+
+.download-btn:hover {
+    background-color: #a0522d; /* Darker chocolate on hover */
+    transform: translateY(-2px); /* Lift the button on hover */
+}
+
+/* About me Picture container */
+.profile-pic {
+    width: 100%;
+    max-width: 300px; 
+    aspect-ratio: 1/1; /* ✅ Maintain a 1:1 aspect ratio */
+    border-radius: 15px; 
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+}
+
+/* Homepage added effects for serenre */
+.name {
+    margin-top: 10px; /* Adds space above the name */
+    display: inline-block; /* Make it an inline-block for better spacing control */
+    position: relative; /* For the glitter effect */
+    animation: glitter 2s infinite; /* Slower animation for a subtler effect */
+}
+
+/* Updated Glittering effect */
+@keyframes glitter {
+    0% {
+        text-shadow: 
+            0 0 2px rgba(200, 175, 150, 0.4), /* Soft light color */
+            0 0 5px rgba(200, 175, 150, 0.4); /* Soft glow */
+    }
+    50% {
+        text-shadow: 
+            0 0 3px rgba(200, 175, 150, 0.6), /* Slightly stronger light */
+            0 0 8px rgba(200, 175, 150, 0.6); /* More pronounced glow */
+    }
+    100% {
+        text-shadow: 
+            0 0 2px rgba(200, 175, 150, 0.4), /* Soft light color */
+            0 0 5px rgba(200, 175, 150, 0.4); /* Soft glow */
+    }
+}
